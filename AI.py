@@ -8,7 +8,8 @@ import webbrowser
 
 recognition = sr.Recognizer()
 with sr.Microphone() as src:
-    print("How can i help you: ")
+    print("Can i help you? ")
+    pyttsx3.speak("Can i help you? ")
 
     audio=recognition.listen(src)
     text=recognition.recognize_google(audio)
@@ -49,15 +50,19 @@ with sr.Microphone() as src:
         pyttsx3.speak("openning facebook")
         webbrowser.open("https://www.facebook.com/")
 
-    elif text in["Open Youtube","Open youtube","open youtube"]:
+    elif text in["Open Youtube","Open youtube","open youtube","open YouTube"]:
         pyttsx3.speak("openning Youtube")
         webbrowser.open("https://www.youtube.com/")
 
-    elif text in["open fifa","open Fifa","Open Fifa","open FIFA","Open FIFA"]:
-        pyttsx3.speak("openning FIFA")
-        os.startfile("D:\Games\FIFA 19\FIFA19.exe")
+    elif text in[#"Application"]:
+        pyttsx3.speak(#"openning application")
+        os.startfile(#"application path")
     
     elif text in ("close the program","Close the program"):
         pyttsx3.speak("clossing the program")
         print("closing the program....")
         sys.exit
+    else:
+        
+        print("I can't understand you")
+        pyttsx3.speak("I can't understand you")
